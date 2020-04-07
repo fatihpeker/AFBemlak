@@ -1,0 +1,113 @@
+body {
+    background:white;
+    }
+    #genel {
+    width:15000px;
+    height:auto;
+    }
+
+    .ust {
+    width:15000px;
+    height:50;
+    background:white;
+    margin-bottom:40px;
+    }
+    .ust img {
+    float:left;
+    }
+    
+    .menu { 
+    width:1500px;
+    height:50px;
+    background:white;
+    }
+    
+    .icerik {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    width:1500px;
+    height:1000px;
+    background:#E0E0E0;
+    }
+    
+    .icerik-sag {
+        margin-top:0px;
+    }
+    
+    .icerik-sol {
+    width:350px;
+    height:280px;
+    background:white;
+    float:right;
+    margin-top: 60px;
+    margin-bottom:10px;
+    box-shadow:10px 10px 10px ;
+    border-style:outset;
+    border-width: 8px;
+    margin-right:150px;
+    }
+
+    
+    .alt {
+    width:1500px;
+    height:60px;
+    background:white;
+    float:right;
+    margin-bottom:40px;
+    box-shadow: 5px 5px 5px;
+
+    
+    }
+    .ic{
+    float: auto;
+    }
+
+    .ic p{
+        float: auto;;
+        color:orangered;
+        font-weight:bold;
+        font-style:italic;
+    }
+
+     .menu ul li {
+    list-style:none;
+    float:left;
+    padding:20px;
+    
+    
+    }
+    
+    .menu ul li a {
+    text-decoration:none;
+    font-style:italic;
+    font-size:27px;
+    font: weight 10px;
+    color:black;
+    margin-left:10px;
+    
+    
+    }
+    .menu ul li:hover { 
+    background:gray;
+ 
+    
+    }
+
+    .alt p {
+    float:right;
+    font-size:25px;
+    color:blue;
+    font-weight:bold;
+    font-style:italic;
+    }
+ 
+    .ara {
+    float:right;
+    position:realtive;
+    margin-top:20px;
+    margin-right:70px;
+    }
+    
+    .ara [type="text"]:hover {
+    width:210;
+    }
