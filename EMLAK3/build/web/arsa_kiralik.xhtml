@@ -1,0 +1,319 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Kiralık Arsa</title>
+              <style>
+                  body{
+                font-family: sans-serif;
+            }
+            *{
+                padding: 0;
+                margin: 0;
+                border: 0;
+                list-style: none;
+            }
+            
+            a{
+                text-decoration: none;
+            }
+            
+            ul.menu{
+                width: 1450px;
+                background: #03A9F4;
+                height: 50px;
+            }
+            
+            ul.menu >li{
+                float:left; 
+                position: relative;
+            }
+            
+            ul.menu >li >a{
+                display: block;
+                font-size: 15px;
+                color: #fff;
+                padding: 0 15px;
+                line-height: 50px;
+                border-right: 1px solid rgba(0,0,0,.1);
+                border-left: 1px solid rgba(0,0,0,.1);
+            }
+            
+            ul.menu ul{
+                background: #03A9F4;
+                width:100px;
+                position:absolute;
+                top:30px;
+                left:0;
+                opacity:0;
+                transition: 250ms all;
+                visibility: hidden;
+            }
+            
+            ul.menu ul li a{
+                display: block;
+                padding: 7px 12px;
+                color: #fff;
+                font-size: 14px;
+                
+            }
+            
+            ul.menu >li:hover ul{
+                opacity:1;
+                visibility: visible;
+                top:50px;
+            }
+                    
+            ul.menu .button2{
+                font-size: 15px;
+                color: #fff;
+                padding: 0 15px;
+                line-height: 50px;
+                border-right: 1px solid rgba(0,0,0,.1);
+                border-left: 1px solid rgba(0,0,0,.1);
+                background-color: #03A9F4;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                cursor: pointer;
+            }
+            body{
+                background-color: #FFFAFA;
+            }
+            .ilan{
+                float: left;
+                width: 1250px;
+                border: 5px solid gray;
+            }
+            .table{
+                float: left;
+                width: 1250px;
+            }
+            .table .baslik{
+                font-size:35px;
+                color:white;
+                font-style: normal;
+                font-family: sans-serif;
+            }
+            
+            .bilgiler{
+                margin-left: 10px;
+                float:left;
+                width: 800px;
+                height: 500px; 
+                border: 3px solid gray;
+                overflow: auto;
+                white-space: nowrap; 
+            }
+            .bslk{
+                margin-left: 10px;
+                margin-top: 20px;
+                width: 600px; 
+                border: 3px solid gray;
+                background-color: #F0FFFF;
+                height: 40px;
+            }
+            .bslk .ilanbaslik{
+                font-size:30px;
+                color: #87CEFA;
+                font-style: normal;
+                float: left;
+                font-family: sans-serif;
+            }      
+            .bilgiler .res{
+                float: left;
+                margin-left: 100px;
+                display: inline-block;
+
+            }
+            .fiyat{
+                background-color: #FFFAFA;
+                border: 3px solid gray;
+                float: left;
+                width: 320px;
+                margin-left: 50px;
+                margin-top: 20px;
+            }
+          
+            .fiyat .fyt{
+                font-family: sans-serif;
+                float: left;
+                font-size:25px;
+            }
+            .fiyat .fyt2{               
+                float: left;              
+                font-family: sans-serif;
+                font-size:25px;
+            }
+            .det{
+                background-color: #FFFAFA;                
+                border: 3px solid gray;
+                float: left;
+                width: 228px;
+                margin-left: 50px;
+                margin-top: 55px;
+            }          
+            .det .det1{
+                font-family: sans-serif;
+                float: left;
+                font-size:25px;
+            }           
+            .det .det2{      
+                float: left;              
+                font-family: sans-serif;
+                font-size:25px;
+            }        
+            .ex{
+                text-align: center;
+                font-size:25px;
+                color: orange;
+                margin-left: 35px;
+                font-family: sans-serif;
+            }
+            
+            .ack{
+                background-color: #FFFAFA; 
+                float: left;
+                width: 600px;
+                margin-left: 30px;
+                margin-top: 20px;
+                border: 3px solid gray;
+                margin-bottom: 15px;
+            }
+          
+            .ack .ac{
+                float: left;
+                font-size:25px;
+                font-family: sans-serif;
+            }
+            .ack .ac2{
+                float: left;              
+                font-size:25px;
+                font-family: sans-serif;
+            }
+        
+        </style>
+    </h:head>
+    <h:body>  
+            <ul class="menu" style="margin-bottom:100px">
+            <li>
+                <h:graphicImage class="res" width="175px" height="50px" value="/resources/upload/logo.png"/> 
+            </li>
+            <li>
+                <a href="index.xhtml">Anasayfa</a>
+            </li>
+            <li>
+                <a href="#">Kiralık</a>
+                    <ul>            
+                        <li>
+                            <a href="konutlar_kiralik.xhtml">Konut</a>
+                        </li>
+                        <li>
+                            <a href="arsalar_kiralik.xhtml">Arsa</a>
+                        </li>
+                        <li>
+                            <a href="isyerleri_kiralik.xhtml">İşyeri</a>
+                        </li>         
+                    </ul>
+            </li>
+            <li>
+                <a href="#">Satılık</a>
+                    <ul>
+                        <li>
+                            <a href="konutlar_satilik.xhtml">Konut</a>
+                        </li>
+                        <li>
+                            <a href="arsalar_satilik.xhtml">Arsa</a>
+                        </li>
+                        <li>
+                            <a href="isyerleri_satilik.xhtml">İşyeri</a>
+                        </li>         
+                    </ul>
+            </li>
+            <li>
+                <a href="login.xhtml" style="margin-left:700px;" >Giriş</a>
+            </li>
+            <li>
+                <a href="signup.xhtml" >Üye Ol</a>
+            </li>
+            <li> 
+             <!--   <a href="#{userController.ilanControl()}" style="font-weight: bold;">+İlan Ver</a>  -->
+                <h:form>
+                    <h:commandButton class="button2" value="+İlan Ver" style="font-weight: bold;" action="#{userController.ilanControl()}" />
+                </h:form>
+            </li>
+        </ul>
+        <h:form>
+            <ui:repeat value="#{arsaController.konutList}" var="tempKonutS">
+                <div class="ilan" style="background-color: white"> 
+                
+                    <div class="table" style="background-color: #0775d3">
+                        <h:outputText class="baslik" value="Kiralık Arsa (İlan No: #{tempKonutS.id} )"></h:outputText>
+                    </div>
+                    <br> </br>
+                    <div class="bslk">
+                        <h:outputText class="ilanbaslik" value="#{tempKonutS.ilanBaslik}"></h:outputText> 
+                        <br></br>
+                    </div> 
+                    <br> </br>
+                    <div class="bilgiler" style="background-color: #F0FFF0">
+                         <ui:repeat  var="resim" value="#{tempKonutS.resimPath}">  
+                                <h:graphicImage class="res" width="550" height="400" value="/resources/upload/#{resim}" />
+                         </ui:repeat> 
+                    </div> 
+                    <br></br>
+                    <div class="fiyat"> 
+                        <br></br>
+                        <h:outputText class="fyt" value="> Fiyat      : "></h:outputText>
+                        <h:outputText class="fyt2" value=" #{tempKonutS.ilanFiyat} TL"></h:outputText>          
+                        <br></br>      
+                        <h:outputText class="fyt" value="> Tür / Durum : "></h:outputText>
+                        <h:outputText class="fyt2" value="#{tempKonutS.kategoriAd} /  #{tempKonutS.islemAd}"></h:outputText>  
+                        <br></br>
+                        <h:outputText class="fyt" value="> Adres      : "></h:outputText>
+                        <h:outputText class="fyt2" value="#{tempKonutS.ilanAdres}"></h:outputText>                                                                
+                        <br></br>
+                        <h:outputText class="fyt" value="> Metrekare  : "></h:outputText>
+                        <h:outputText class="fyt2" value="#{tempKonutS.metreKare}"></h:outputText> 
+                    </div>                   
+                    <br></br>
+                    <div class="det">
+                        <br></br>
+                        <h:outputText class="ex" value="Özellikler "></h:outputText>
+                        <br></br>
+                        <h:outputText class="det1" value="> Kanalizasyon : "></h:outputText>
+                        <h:outputText class="det2" value="#{tempKonutS.kanalizasyon}"></h:outputText>                         
+                        <br></br>
+                        <h:outputText class="det1" value="> Telefon : "></h:outputText>
+                        <h:outputText class="det2" value="#{tempKonutS.telefon}"></h:outputText>  
+                        <br></br>
+                        <h:outputText class="det1" value="> Elektrik : "></h:outputText>
+                        <h:outputText class="det2" value="#{tempKonutS.elektrik}"></h:outputText> 
+                        <br></br>
+                        <h:outputText class="det1" value="> Doğalgaz : "></h:outputText>
+                        <h:outputText class="det2" value="#{tempKonutS.dogalgaz}"></h:outputText>  
+                        <br></br>
+                        <h:outputText class="det1" value="> Su : "></h:outputText>
+                        <h:outputText class="det2" value="#{tempKonutS.su}"></h:outputText> 
+                    </div>                   
+                    <div class="ack">
+                        <br></br>
+                        <h:outputText class="ac" value=" Açıklama   : "></h:outputText>
+                        <h:outputText class="ac2" value="#{tempKonutS.ilanAciklama}"></h:outputText>
+                        <br></br>
+                    </div>
+               
+                </div>           
+            </ui:repeat>
+        </h:form>
+        <ul class="menu" style="margin-top:100px; float:left;">
+            <li>
+                <p style="margin-left: 530px; color: black; font-size: 15px; margin-top:15px;">Copyright © 2020 afbemlak. Tüm hakları saklıdır.</p>
+            </li>
+        </ul>
+    </h:body>
+</html>
+

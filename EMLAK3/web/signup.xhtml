@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>sign Up</title>
+        <link type="text/css" rel="stylesheet" 
+              href="/helloworld/javax.faces.resource/styles.css.jsf?ln=css" />
+        <style>
+            * {
+              box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+              /* 
+              -May want to add "border-box for "box-sizing so padding does not affect width
+              -Reset margin and padding 
+             */
+            }
+            
+            a {
+              text-decoration: none;
+              /* 
+              Underlined links are ugly :)
+             */
+            }
+            
+            .form-group{
+                margin-top: 15px;
+            }
+            
+            label {
+                display: block;
+                color: #666;
+                /* 
+                  Label should be turned into a block element
+                */
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                border: #ddd 1px solid;
+                border-radius: 5px;
+                /* 
+                  Inputs should reach accross the .form-wrap 100% and have some padding
+                */
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                margin-top: 20px;
+                background: #49c1a2;
+                color: #fff;
+                cursor: pointer;
+                /* 
+                  Button should wrap accross 100% and display as block
+                  Background color for button is #49c1a2
+                */
+            }
+            
+            .btn:hover{
+                background: #37a08e;
+            }
+            
+            .bottom-text{
+                font-size: 13px;
+                margin-top: 20px;
+            }
+           
+        </style>
+    </h:head>
+    <h:body style="font-family: 'Raleway', sans-serif; background: #344a72; color: #fff; line-height: 1.8">
+      <div style= "margin:30px auto; max-width:400px; padding: 20px">
+        <div style="background: #fff; padding: 15px 25px; color: #333">
+            <h1 style=" text-align: center">Kayıt Ol</h1>
+            <p style=" text-align: center;">Kolay ve Ücretsiz</p>
+            <h:form>
+                <div styleClass="form-group">
+                    <h:outputLabel>Ad</h:outputLabel>
+                    <h:inputText value="#{user.firstName}" id="firstName" /> <h:message for="firstName" />
+                </div>
+                <div styleClass="form-group">
+                    <h:outputLabel>Soyad</h:outputLabel>
+                    <h:inputText value="#{user.lastName}" id="lasttName" /> <h:message for="lastName" />
+                </div>
+                <div styleClass="form-group">
+                    <h:outputLabel>Email</h:outputLabel>
+                    <h:inputText value="#{user.email}" id="email" 
+                                 required="true"
+                                 requiredMessage="Your email is mandatory."/> <h:message for="email" />
+                </div>
+                <div styleClass="form-group">
+                    <h:outputLabel>Şifre</h:outputLabel> 
+                    <h:inputSecret value="#{user.password}" id="password" /> <h:message for="password" />
+                </div>
+                <h:commandButton styleClass="btn" value="Kayıt Ol" action="#{userController.addUser(user)}"/>
+                <p styleClass="bottom-text">
+                  Kayıt ol butonuna tıklayarak;
+                  <a href="#">Şartlarımızı</a> &amp; <a href="#">Koşullarımızı</a> ve
+                  <a href="#">Gizlilik Politikasını </a> 
+                  kabul etmiş olursunuz !
+                </p>
+              </h:form>
+            </div>
+          <footer style="text-align: center; margin-top: 10px;">  
+          <p>Zaten bir hesabın var mı? <a style="color:#49c1a2;" href="login.xhtml">Giriş Yap</a></p> 
+        </footer>
+    </div>
+        
+        
+        
+        
+        
+    </h:body>
+</html>
+

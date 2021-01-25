@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>AFB | Emlak</title>
+        <style>
+            body{
+                font-family: sans-serif;
+            }
+            *{
+                padding: 0;
+                margin: 0;
+                border: 0;
+                list-style: none;
+            }
+            
+            a{
+                text-decoration: none;
+            }
+            
+            ul.menu{
+                width: 1450px;
+                background: #03A9F4;
+                height: 50px;
+            }
+            
+            ul.menu >li{
+                float:left; 
+                position: relative;
+            }
+            
+            ul.menu >li >a{
+                display: block;
+                font-size: 15px;
+                color: #fff;
+                padding: 0 15px;
+                line-height: 50px;
+                border-right: 1px solid rgba(0,0,0,.1);
+                border-left: 1px solid rgba(0,0,0,.1);
+            }
+            
+            ul.menu ul{
+                background: #03A9F4;
+                width:100px;
+                position:absolute;
+                top:30px;
+                left:0;
+                opacity:0;
+                transition: 250ms all;
+                visibility: hidden;
+            }
+            
+            ul.menu ul li a{
+                display: block;
+                padding: 7px 12px;
+                color: #fff;
+                font-size: 14px;
+                
+            }
+            
+            ul.menu >li:hover ul{
+                opacity:1;
+                visibility: visible;
+                top:50px;
+            }
+            
+            .icerik {
+                width:1450px;
+                height:400px;
+                background-image: url("#{resource['upload/ark.jpg']}");
+            }
+
+            .icerik h2 {
+                color: #00796B;
+                text-align: center;
+                padding: 54px 16px;
+            }
+
+            .icerik  .box1{
+                background-color: white;
+                width: 170px;
+                height: 170px;
+                box-shadow: 5px 5px 5px;
+                padding: 14px 16px;
+                float: left;
+                margin-left: 390px;
+            }
+
+            .icerik  .box2{
+                background-color: white;
+                width: 170px;
+                height: 170px;
+                box-shadow: 5px 5px 5px;
+                padding: 14px 16px;
+                float: left;
+                margin-left: 35px;
+            }
+
+            .icerik  .box3{
+                background-color: white;
+                width: 170px;
+                height: 170px;
+                box-shadow: 5px 5px 5px;
+                padding: 14px 16px;
+                float: left;
+                margin-left: 35px;
+            }
+            
+            .icerik2 {
+                width:1450px;
+                height:450px;
+                border: 3px solid #03A9F4;
+            }
+            
+            .icerik2 h3 {
+                color: #DAA520;
+                text-align: center;
+                padding: 10px 10px;
+                font-size: 20px;
+            }
+            
+            .icerik2 .kutu{
+               float:left;
+               margin-left: 60px;
+            }
+            .icerik2 .yazi{
+                float:left;
+                margin-top: 45px;   
+                margin-left: 30px;
+                border: 6px solid #FFFAFA;
+                background-color: #FFFAFA;
+            }
+            
+            .icerik2 .yazi p{
+                font-style: oblique;
+                color: black;
+                text-align: center;
+            }    
+            
+            .ic{
+                width: 1450px;
+            }
+            .ic .icerik3{
+                margin-left: 80px;
+                width:550px;
+                height:425px;
+                border: 5px solid #AFEEEE;
+                float:left;
+            }
+            
+            .icerik3 .form-group{              
+                margin-top: 15px;
+            }
+            
+            .icerik3 .button{
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            
+            .ic .icerik4{
+                width:600px;
+                height:425px;
+                border: 2px solid #03A9F4;
+                float:left;
+                margin-left: 90px;
+            }
+            
+            ul.menu .button2{
+                font-size: 15px;
+                color: #fff;
+                padding: 0 15px;
+                line-height: 50px;
+                border-right: 1px solid rgba(0,0,0,.1);
+                border-left: 1px solid rgba(0,0,0,.1);
+                background-color: #03A9F4;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                cursor: pointer;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <ul class="menu">
+            <li>
+                <h:graphicImage class="res" width="175px" height="50px" value="/resources/upload/logo.png"/> 
+            </li>
+            <li>
+                <a href="index.xhtml">Anasayfa</a>
+            </li>
+            <li>
+                <a href="#">Kiralık</a>
+                    <ul>            
+                        <li>
+                            <a href="konutlar_kiralik.xhtml">Konut</a>
+                        </li>
+                        <li>
+                            <a href="arsalar_kiralik.xhtml">Arsa</a>
+                        </li>
+                        <li>
+                            <a href="isyerleri_kiralik.xhtml">İşyeri</a>
+                        </li>         
+                    </ul>
+            </li>
+            <li>
+                <a href="#">Satılık</a>
+                    <ul>
+                        <li>
+                            <a href="konutlar_satilik.xhtml">Konut</a>
+                        </li>
+                        <li>
+                            <a href="arsalar_satilik.xhtml">Arsa</a>
+                        </li>
+                        <li>
+                            <a href="isyerleri_satilik.xhtml">İşyeri</a>
+                        </li>         
+                    </ul>
+            </li>
+            <li>
+                <a href="login.xhtml" style="margin-left:700px;" >Giriş</a>
+            </li>
+            <li>
+                <a href="signup.xhtml" >Üye Ol</a>
+            </li>
+            <li> 
+             <!--   <a href="#{userController.ilanControl()}" style="font-weight: bold;">+İlan Ver</a>  -->
+                <h:form>
+                    <h:commandButton class="button2" value="+İlan Ver" style="font-weight: bold;" action="#{userController.ilanControl()}" />
+                </h:form>
+            </li>
+        </ul>
+        
+        <div class="icerik">
+            <h2>Hayalindeki Yere Sahip Olmak Artık Çok Kolay!</h2>
+            <div class="box1">
+                <h:graphicImage width="120px" height="120px" style="padding:10px 25px" value="/resources/upload/knt.jpg"/>
+                <h3 style="text-align:center">Konut</h3>
+            </div>
+            <div class="box2">
+                <h:graphicImage width="120px" height="120px" style="padding:10px 25px" value="/resources/upload/wk.jpg"/>
+                <h3 style="text-align:center">İşyeri</h3>
+            </div>
+            <div class="box3">
+                <h:graphicImage width="120px" height="120px" style="padding:10px 25px" value="/resources/upload/ars.jpg"/>
+                <h3 style="text-align:center">Arsa</h3>
+            </div>
+        </div>
+        
+        <div class="icerik2" style="background-color: #FFEFD5; margin-top:40px;">
+            <h3>Hedeflerimiz ve Projelerimiz Hakkında</h3>
+            <div class="kutu">
+                <h:graphicImage width="550px" height="370px" style="padding:10px 25px" value="/resources/upload/rest.jpg"/>
+            </div>
+            <div class="yazi">
+                <p>
+                    <br>2020 yılında faaliyete geçen ve adını kurucularından alan AFB Emlak, kaliteli hizmet </br>
+                    <br>ve şeffaf bilgi anlayışını benimseyerek gayrimenkul profesyonellerini ve bireyleri doğru, </br>
+                    <br>kapsamlı referans bilgilerle aynı çatı altında buluşturan güvenilir bir gayrimenkul bilgi ve </br>
+                    <br> pazarlama platformudur.</br>
+                    <br></br>
+                    <br>Türkiye'de gayrimenkul sektörüne yatırım yapanlar, gayrimenkul satanlar/kiralayanlar, yeni </br>
+                    <br>ev arayışında olanlar, bu sektörden profesyonel kazanç sağlayanlar için bir buluşma noktası </br>
+                    <br> ve referans bilgi kaynağıdır.</br>  
+                </p>
+            </div>  
+        </div>
+        <div class="ic">
+            <div class="icerik3" style="background-color: #AFEEEE;  margin-top:20px;">
+                <h3 style="margin-top:10px;">Bizimle İletişime Geçin!</h3>
+
+                    <div class="form-group">
+                        <h:outputLabel>Ad: </h:outputLabel>
+                        <br></br>
+                        <h:inputText value="" id="firstName" /> <h:message for="firstName" />
+                    </div>
+                    <br></br>
+                    <div class="form-group">
+                        <h:outputLabel>E-Posta: </h:outputLabel>
+                        <br></br>
+                        <h:inputText value="" id="email" /> 
+                    </div>
+                    <br></br>
+                    <div class="form-group">
+                        <h:outputLabel>Mesajınız: </h:outputLabel>
+                        <br></br>
+                        <h:inputTextarea id="alan" value="" required="true" requiredMessage="Zorunlu Alan" cols="50" rows="10"></h:inputTextarea> 
+                    </div>
+                    <h:commandButton class="button" value = "Gönder" onclick = "alert('Mesajınız Alınmıştır!');" />
+            </div>
+
+            <div class="icerik4" style="background-color: #FFFAFA;  margin-top:20px;">
+                <h3 style="margin-top:10px; margin-bottom: 30px; text-align: center; color: red;">Emlak Haberleri!</h3>
+                <h:graphicImage width="210px" height="160px" value="/resources/upload/haber.jpg"/>
+                <p style="width:350px; float: left; margin-left: 5px;">
+                    <br>Emlak vergisinin ilk taksit ödemelerine geçildi.</br> 
+                    <br>İlk taksit mayıs ayı boyunca ödenecek</br> 
+                    <br>İkinci taksit ödemeleri kasım ayında yapılacak.</br>
+                </p>
+                <h:graphicImage width="210px" height="160px" value="/resources/upload/cd.jpg" style="float:left"/>
+                <p style="width:350px; float: left; margin-left: 5px;">
+                    <br>Bankalar tarafından yapılan açıklamayla</br> 
+                    <br>konut kredisi için faiz oranları yarı yarıya</br> 
+                    <br>düşürüldü.</br>
+                </p>
+            </div>
+        </div>
+        <ul class="menu" style="margin-top:30px; float:left;">
+            <li>
+                <p style="margin-left: 530px; color: black; font-size: 15px; margin-top:15px;">Copyright © 2020 afbemlak. Tüm hakları saklıdır.</p>
+            </li>
+        </ul>
+        
+    </h:body>
+</html>
+

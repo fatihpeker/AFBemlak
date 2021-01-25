@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+   
+    <h:head>
+        <title>Arsa</title>
+        <link type="text/css" rel="stylesheet" 
+              href="/helloworld/javax.faces.resource/styles.css.jsf?ln=css" />
+          <style>
+               body{
+                font-family: sans-serif;
+            }
+            *{
+                padding: 0;
+                margin: 0;
+                border: 0;
+                list-style: none;
+            }
+            
+            a{
+                text-decoration: none;
+            }
+            
+            ul.menu{
+                width: 1450px;
+                background: #03A9F4;
+                height: 50px;
+            }
+            
+            ul.menu >li{
+                float:left; 
+                position: relative;
+            }
+            
+            ul.menu >li >a{
+                display: block;
+                font-size: 15px;
+                color: #fff;
+                padding: 0 15px;
+                line-height: 50px;
+                border-right: 1px solid rgba(0,0,0,.1);
+                border-left: 1px solid rgba(0,0,0,.1);
+            }
+            
+            ul.menu ul{
+                background: #03A9F4;
+                width:100px;
+                position:absolute;
+                top:30px;
+                left:0;
+                opacity:0;
+                transition: 250ms all;
+                visibility: hidden;
+            }
+            
+            ul.menu ul li a{
+                display: block;
+                padding: 7px 12px;
+                color: #fff;
+                font-size: 14px;
+                
+            }
+            
+            ul.menu >li:hover ul{
+                opacity:1;
+                visibility: visible;
+                top:50px;
+            }
+                    
+            ul.menu .button2{
+                font-size: 15px;
+                color: #fff;
+                padding: 0 15px;
+                line-height: 50px;
+                border-right: 1px solid rgba(0,0,0,.1);
+                border-left: 1px solid rgba(0,0,0,.1);
+                background-color: #03A9F4;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                cursor: pointer;
+            }
+            * {
+              box-sizing: border-box ;
+              margin: 0;
+              padding: 0;
+              /* 
+              -May want to add "border-box for "box-sizing so padding does not affect width
+              -Reset margin and padding 
+             */
+            }
+            
+            
+            .form-group{
+                margin-top: 15px;
+            }
+            
+            label {
+                display: block;
+                color: #666;
+                /* 
+                  Label should be turned into a block element
+                */
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                border: #ddd 1px solid;
+                border-radius: 5px;
+                /* 
+                  Inputs should reach accross the .form-wrap 100% and have some padding
+                */
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                margin-top: 20px;
+                background: #49c1a2;
+                color: #fff;
+                cursor: pointer;
+                /* 
+                  Button should wrap accross 100% and display as block
+                  Background color for button is #49c1a2
+                */
+            }
+            
+            .btn:hover{
+                background: #37a08e;
+            }
+            
+            .bottom-text{
+                font-size: 13px;
+                margin-top: 20px;
+            }
+           
+        </style>
+    </h:head>
+    <h:body style="font-family: 'Raleway', sans-serif; background: lightskyblue; color: #fff; line-height: 1.8">
+        <ul class="menu" style="margin-bottom:100px">
+            <li>
+                <h:graphicImage class="res" width="175px" height="50px" value="/resources/upload/logo.png"/> 
+            </li>
+            <li>
+                <a href="index.xhtml">Anasayfa</a>
+            </li>
+            <li>
+                <a href="#">Kiralık</a>
+                    <ul>            
+                        <li>
+                            <a href="konutlar_kiralik.xhtml">Konut</a>
+                        </li>
+                        <li>
+                            <a href="arsalar_kiralik.xhtml">Arsa</a>
+                        </li>
+                        <li>
+                            <a href="isyerleri_kiralik.xhtml">İşyeri</a>
+                        </li>         
+                    </ul>
+            </li>
+            <li>
+                <a href="#">Satılık</a>
+                    <ul>
+                        <li>
+                            <a href="konutlar_satilik.xhtml">Konut</a>
+                        </li>
+                        <li>
+                            <a href="arsalar_satilik.xhtml">Arsa</a>
+                        </li>
+                        <li>
+                            <a href="isyerleri_satilik.xhtml">İşyeri</a>
+                        </li>         
+                    </ul>
+            </li>
+            <li>
+                <a href="login.xhtml" style="margin-left:700px;" >Giriş</a>
+            </li>
+            <li>
+                <a href="signup.xhtml" >Üye Ol</a>
+            </li>
+            <li> 
+             <!--   <a href="#{userController.ilanControl()}" style="font-weight: bold;">+İlan Ver</a>  -->
+                <h:form>
+                    <h:commandButton class="button2" value="+İlan Ver" style="font-weight: bold;" action="#{userController.ilanControl()}" />
+                </h:form>
+            </li>
+        </ul>
+        <div style= "margin:30px  auto; max-width:400px; padding: 20px">
+            <div style="background: #fff; padding: 15px 25px; color: #333">
+                <h1 style=" text-align: left">Arsa Ekle</h1>
+        <h:form enctype="multipart/form-data">
+            <div styleClass="form-group">
+                <h:outputLabel>m<sup>2</sup></h:outputLabel>
+                <h:inputText value="#{arsaController.arsa.metreKare}" id="metrekare" /> <h:message for="metrekare" />
+            </div>
+            <div styleClass="form-group">
+                <h:outputLabel>Kanalizasyon</h:outputLabel>
+                <h:inputText value="#{arsaController.arsa.kanalizasyon}" pt:placeholder="Var,Yok" id="kanalizasyon" /> <h:message for="kanalizasyon" />
+            </div>
+            <div styleClass="form-group">
+                <h:outputLabel>Su</h:outputLabel>
+                <h:inputText value="#{arsaController.arsa.su}" pt:placeholder="Var,Yok" id="su"/> <h:message for="su" />
+            </div>
+            <div styleClass="form-group">
+               <h:outputLabel>Telefon</h:outputLabel>
+               <h:inputText value="#{arsaController.arsa.telefon}" pt:placeholder="Var,Yok" id="telefon"/> <h:message for="telefon" /> 
+            </div>
+            <div styleClass="form-group">
+               <h:outputLabel>Elektrik</h:outputLabel>
+               <h:inputText value="#{arsaController.arsa.elektrik}" pt:placeholder="Var,Yok" id="elektrik"/> <h:message for="elektrik" /> 
+            </div>
+            <div styleClass="form-group">
+               <h:outputLabel>Doğalgaz</h:outputLabel>
+               <h:inputText value="#{arsaController.arsa.dogalgaz}" pt:placeholder="Var,Yok" id="dogalgaz"/> <h:message for="dogalgaz" /> 
+            </div>
+            <div>
+               <h:outputLabel>Resim</h:outputLabel>
+               <h:inputFile value="#{documentController.doc}"/>
+               <h:commandButton styleClass="btn" action="#{documentController.upload}" value="Resim Yükle"/>
+            </div>
+            <h:commandButton styleClass="btn" value="Bitir" action="#{arsaController.addArsa()}"/>
+        </h:form> 
+       </div>
+      </div>  
+         <ul class="menu" style="margin-top:100px; float:left;">
+            <li>
+                <p style="margin-left: 530px; color: black; font-size: 15px; margin-top:15px;">Copyright © 2020 afbemlak. Tüm hakları saklıdır.</p>
+            </li>
+        </ul>
+    </h:body>
+</html>
+

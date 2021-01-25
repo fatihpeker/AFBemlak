@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Satılık İşyerleri</title>
+        <h:outputStylesheet library="css" name="data-table.css"  />
+        <style>
+            body{
+                font-family: sans-serif;
+            }
+            *{
+                padding: 0;
+                margin: 0;
+                border: 0;
+                list-style: none;
+            }
+            
+            a{
+                text-decoration: none;
+            }
+            
+            ul.menu{
+                width: 1450px;
+                background: #03A9F4;
+                height: 50px;
+            }
+            
+            ul.menu >li{
+                float:left; 
+                position: relative;
+            }
+            
+            ul.menu >li >a{
+                display: block;
+                font-size: 15px;
+                color: #fff;
+                padding: 0 15px;
+                line-height: 50px;
+                border-right: 1px solid rgba(0,0,0,.1);
+                border-left: 1px solid rgba(0,0,0,.1);
+            }
+            
+            ul.menu ul{
+                background: #03A9F4;
+                width:100px;
+                position:absolute;
+                top:30px;
+                left:0;
+                opacity:0;
+                transition: 250ms all;
+                visibility: hidden;
+            }
+            
+            ul.menu ul li a{
+                display: block;
+                padding: 7px 12px;
+                color: #fff;
+                font-size: 14px;
+                
+            }
+            
+            ul.menu >li:hover ul{
+                opacity:1;
+                visibility: visible;
+                top:50px;
+            }
+                    
+            ul.menu .button2{
+                font-size: 15px;
+                color: #fff;
+                padding: 0 15px;
+                line-height: 50px;
+                border-right: 1px solid rgba(0,0,0,.1);
+                border-left: 1px solid rgba(0,0,0,.1);
+                background-color: #03A9F4;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                cursor: pointer;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <ul class="menu" style="margin-bottom:100px">
+            <li>
+                <h:graphicImage class="res" width="175px" height="50px" value="/resources/upload/logo.png"/> 
+            </li>
+            <li>
+                <a href="index.xhtml">Anasayfa</a>
+            </li>
+            <li>
+                <a href="#">Kiralık</a>
+                    <ul>            
+                        <li>
+                            <a href="konutlar_kiralik.xhtml">Konut</a>
+                        </li>
+                        <li>
+                            <a href="arsalar_kiralik.xhtml">Arsa</a>
+                        </li>
+                        <li>
+                            <a href="isyerleri_kiralik.xhtml">İşyeri</a>
+                        </li>         
+                    </ul>
+            </li>
+            <li>
+                <a href="#">Satılık</a>
+                    <ul>
+                        <li>
+                            <a href="konutlar_satilik.xhtml">Konut</a>
+                        </li>
+                        <li>
+                            <a href="arsalar_satilik.xhtml">Arsa</a>
+                        </li>
+                        <li>
+                            <a href="isyerleri_satilik.xhtml">İşyeri</a>
+                        </li>         
+                    </ul>
+            </li>
+            <li>
+                <a href="login.xhtml" style="margin-left:700px;" >Giriş</a>
+            </li>
+            <li>
+                <a href="signup.xhtml" >Üye Ol</a>
+            </li>
+            <li> 
+             <!--   <a href="#{userController.ilanControl()}" style="font-weight: bold;">+İlan Ver</a>  -->
+                <h:form>
+                    <h:commandButton class="button2" value="+İlan Ver" style="font-weight: bold;" action="#{userController.ilanControl()}" />
+                </h:form>
+            </li>
+        </ul>
+          <div id="wrapper">
+		<div id="header">
+			<h2>Satılık İşyerleri</h2>
+		</div>
+	</div>
+
+	<div id="container">
+
+		<div id="content">
+                    <h:form>
+                        <h:dataTable value="#{ilanController.ilanListIsyeri}" var="tempKonut"
+                                      styleClass="demo-table" 
+                                        headerClass="demo-table-header"
+                                        rowClasses="demo-table-odd-row,demo-table-even-row">
+                            <h:column>
+                                <f:facet name="header">ID</f:facet>
+                                #{tempKonut.ilanId}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">İlan Başlık</f:facet>
+                                #{tempKonut.ilanBaslik}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">İlan Fiyat</f:facet>
+                                #{tempKonut.ilanFiyat}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Kategori</f:facet>
+                                #{tempKonut.kategoriAd}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">İşlem Türü</f:facet>
+                                #{tempKonut.islemAd}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">İlan Adres</f:facet>
+                                #{tempKonut.ilanAdres}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">İlan Açıklama</f:facet>
+                                #{tempKonut.ilanAciklama}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Oda Sayısı</f:facet>
+                                #{tempKonut.odaSayisi}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Kaçıncı Kat</f:facet>
+                                #{tempKonut.binaKacinciKat}
+                            </h:column>
+                            <h:column>
+                                <h:commandButton styleClass="add-button" value="Detaylı İnceleme" action= "#{isyeriController.GetIsyeriList(tempKonut.ilanId)}"/>
+                            </h:column>
+                        </h:dataTable>
+                    </h:form>
+                </div>
+        </div>
+        <ul class="menu" style="margin-top:100px; float:left;">
+            <li>
+                <p style="margin-left: 530px; color: black; font-size: 15px; margin-top:15px;">Copyright © 2020 afbemlak. Tüm hakları saklıdır.</p>
+            </li>
+        </ul>
+    </h:body>
+</html>
+
